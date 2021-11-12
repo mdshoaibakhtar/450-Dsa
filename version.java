@@ -489,7 +489,46 @@ public class version
         min_height(arr,brr,n,m,k);
 
     }
-}*/
+}
+package my.solution;
+public class version  {
+    static void traversal(int arr[],int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]);
+            System.out.print(" ");
+        }
+    }
+    static int addition(int arr[],int add[],int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            add[i] = arr[i] + 1;
+            System.out.print(add[i]);
+            System.out.print(" ");
+        }
+        System.out.println("");
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(add[i]);
+            System.out.print(" ");
+        }
+        return 0;
+    }
+    public static void main(String[] args)
+    {
+        int [] arr = {3,4,1,7,1,9};
+        int [] add = new int[10];
+        int n= arr.length;
+        traversal(arr,n);
+        System.out.println("");
+//        addition(arr,add,n);
+        jump(arr,add,n);
+    }
+}
+
+//Question No. 16
 package my.solution;
 public class version  {
     static void traversal(int arr[],int n)
@@ -501,33 +540,177 @@ public class version  {
         }
     }
 
-    static void jump(int arr[],int n)
+    static void duplicate(int arr[],int n)
     {
-        int nextjump=0;
-//      3,4,1,7,1,9
-        for(int i=0;i<=n;i=nextjump)
+        for(int i=0;i<n;i++)   //3,4,3,7,1,9
         {
-            nextjump = arr[i+nextjump];//nextjump= 3
-            System.out.println(nextjump);
+            for(int j=i+1;j<n;j++)
+            {
+                if(arr[i] == arr[j])
+                {
+                    System.out.println("Duplicate Of "+arr[i]+" Is Present In This Given Array");
+                }
+            }
         }
     }
     public static void main(String[] args)
     {
-        int [] arr = {3,4,1,7,1,9};
+        int [] arr = {3,4,3,7,1,9,1,9};
+        int [] add = new int[10];
         int n= arr.length;
         traversal(arr,n);
         System.out.println("");
-        jump(arr,n);
-
+        duplicate(arr,n);
     }
 }
 
+//Question No. 17  [Merge 2 sorted array without using extra space]
+ package my.solution;
+
+import java.util.Arrays;
+
+public class version  {
+    static void traversal(int arr[],int n,int brr[],int m)
+    {
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]);
+            System.out.print(" ");
+        }
+        System.out.println("");
+        for(int i=0;i<m;i++)
+        {
+            System.out.print(brr[i]);
+            System.out.print(" ");
+        }
+
+    }
 
 
+    static void sorted(int arr[],int brr[],int n,int m)
+    {
 
+//        int [] arr = {0,1,2,7};
+//        int [] brr = {5,3,6,8,9};
+        int temp;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                if(arr[i] > brr[j])
+                {
+                    //swapping occured
+                    temp = arr[i];
+                    arr[i] = brr[j];
+                    brr[j] = temp;
+                }
+            }
+        }
+        Arrays.sort(brr);
+        traversal(arr,n,brr,m);
 
+    }
+    public static void main(String[] args)
+    {
+        int [] arr = {1,3,5,7};
+        int [] brr = {0,2,6,8,9};
+        int n= arr.length;
+        int m= brr.length;
+        traversal(arr,n,brr,m);
+        System.out.println("");
+        sorted(arr,brr,n,m);
+    }
+}
 
+//Question No. 18  [Kadane's Algorithm]
+package my.solution;
+public class version
+{
+    static void traversal(int arr[],int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]);
+            System.out.print(" ");
+        }
+        System.out.println();
+    }
 
+    static void kadanes(int arr[],int n)
+    {
+        int currsum=0;
+        int maxsum=0;
+        for(int i=0;i<n;i++)   //1,2,3,-2,5
+        {
+            currsum = currsum+arr[i];
+            if(currsum > maxsum)
+            {
+                maxsum = currsum;
+            }
+            if(currsum < 0)
+            {
+                currsum = 0;
+            }
+        }
+        System.out.println(maxsum);
+    }
+    public static void main(String[] args)
+    {
+        int arr[] = {-1,2,-3,-4,5};
+        int n = arr.length;
+        traversal(arr,n);
+        kadanes(arr,n);
+    }
+}
+
+//Question No. 23 [count pairs With Given Sum]
+package my.solution;
+public class version
+{
+    static void traversal(int arr[],int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]);
+            System.out.print(" ");
+        }
+        System.out.println();
+    }
+
+    static void sum(int arr[],int n)
+    {
+        int k=2;
+        int pair= 0;
+        for(int i=0;i<n;i++)//           1,5,7,1
+        {
+            for(int j=i;j<n;j++)
+            {
+                int sum = (arr[i]+arr[j]);
+                    if(sum == k)
+                    {
+                        System.out.print(arr[i]);
+                        System.out.print(" ");
+                        System.out.print(arr[j]);
+                        System.out.print(" ");
+                        pair ++;
+                    }
+
+            }
+        }
+        System.out.println();
+        System.out.println(pair);
+    }
+    public static void main(String[] args)
+    {
+        int arr[]= {1,1,1,1};
+        int n = arr.length;
+//        int k=6;
+        traversal(arr,n);
+        sum(arr,n);
+
+    }
+}
+*/
 
 
 
