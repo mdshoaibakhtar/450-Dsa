@@ -710,7 +710,74 @@ public class version
 
     }
 }
-*/
+
+
+//Question No. 24 find Common element in 3 sorted array
+//arr = [1,2,4,5]
+//brr = [2,6,7,8]
+//crr = [2,3,5,7]
+
+package my.solution;
+public class version
+{
+    static void traversal(int arr[],int brr[],int crr[],int n,int m,int o)
+    {
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]);
+            System.out.print(" ");
+        }
+        System.out.println();
+        for(int j=0;j<m;j++)
+        {
+            System.out.print(brr[j]);
+            System.out.print(" ");
+        }
+        System.out.println();
+        for(int k=0;k<o;k++)
+        {
+            System.out.print(crr[k]);
+            System.out.print(" ");
+        }
+        System.out.println();
+    }
+
+    static void sort_Array(int arr[],int brr[],int crr[],int n,int m,int o )
+    {
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+//                if(arr[i] == brr[j])
+//                {
+//                    System.out.println(arr[i] +" is matching with "+brr[j]);
+//                }
+                for(int k=0;k<o;k++)
+                {
+                    if(arr[i] == brr[j] && brr[j] == crr[k])
+                    {
+                        System.out.println(arr[i]+" ,"+brr[j] +" and"+crr[k]+" are matched");
+                    }
+                }
+            }
+        }
+    }
+    public static void main(String[] args)
+    {
+        int arr[] = {1,2,3,4,6};
+        int brr[] = {4,5,6,8};
+        int crr[] = {0,4,6,9,10};
+        int n = arr.length;
+        int m = brr.length;
+        int o = crr.length;
+        traversal(arr,brr,crr,n,m,o);
+        sort_Array(arr,brr,crr,n,m,o);
+    }
+}*/
+//Question No. 25
+
+
+
 
 
 
