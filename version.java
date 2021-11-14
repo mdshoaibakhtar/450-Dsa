@@ -773,8 +773,173 @@ public class version
         traversal(arr,brr,crr,n,m,o);
         sort_Array(arr,brr,crr,n,m,o);
     }
+}
+//Question No. 22 Stock
+package my.solution;
+public class version
+{
+    static void traversal(int arr[],int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]);
+            System.out.print(" ");
+        }
+        System.out.println();
+    }
+
+    static void stock(int arr[],int n)
+    {
+        int min=0;
+        int max=0;
+        for(int i=0;i<n;i++)   //8,2,4,1,3,9
+        {
+            for(int j=i+1;j<n-1;j++)
+            {
+                if(arr[j] < arr[i])
+                {
+                    min = arr[j];
+                }
+                else{
+                     min = arr[i];
+                }
+            }
+        }
+//        System.out.println(min);
+        for(int i=0;i<n;i++)   //8,2,4,1,3,9
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                if(arr[j] > arr[i])
+                {
+                    max = arr[j];
+                }
+                else{
+                     max = arr[i];
+                }
+            }
+        }
+//        System.out.println(max);
+
+        int max_profit = max-min;
+        System.out.println("Maximum Profit will be "+max_profit);
+    }
+
+    public static void main(String[]args)
+    {
+        int arr[] = {8,2,4,1,3,9};
+        int n=arr.length;
+        traversal(arr,n);
+        stock(arr,n);
+    }
+}
+
+//Question No. 22 factorial
+package my.solution;
+public class version {
+    static int factorial(int n)
+    {
+        if(n == 0)
+        {
+            return 0;
+        }
+        if(n == 1)
+        {
+        return 1;
+        }
+        else
+        {
+            return n * factorial(n-1);
+        }
+    }
+    public static void main(String[] args)
+    {
+        int n = 5;
+        System.out.println(factorial(n));
+
+    }
+}
+
+//Question No. 28
+package my.solution;
+public class version
+{
+    static void traversal(int arr[],int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]);
+            System.out.print(" ");
+        }
+        System.out.println();
+    }
+
+    static void subArray_mult(int arr[],int n)
+    {
+        int currSum =1;
+        int maxSum = 1;                     //1,2,4,-1,-4
+        for(int i=0;i<n;i++)
+        {
+            currSum = currSum*arr[i];
+            if(currSum > maxSum)
+            {
+                maxSum = currSum;
+            }
+            if(currSum < 0)
+            {
+                currSum = 0;
+            }
+        }
+        System.out.println(maxSum+" is the highest multiplication of subArray");
+
+    }
+    }
+    public static void main(String[] args)
+    {
+        int arr[] = {1,2,4,-1,-4};
+        int n = arr.length;
+        traversal(arr,n);
+        subArray_mult(arr,n);
+    }
 }*/
-//Question No. 25
+//Question No. 28  Longest Consecutive SubArray
+package my.solution;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+public class version
+{
+    static void traversal(int arr[],int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]);
+            System.out.print(" ");
+        }
+        System.out.println();
+    }
+
+    static void longest(int arr[],int n)
+    {
+        Arrays.sort(arr);
+        traversal(arr,n);
+        for(int i=0;i<n-1;i++)                //1 2 3 4 5 9
+        {
+            if((arr[i]-arr[i]) == 1)
+            {
+                System.out.println(arr[i]);
+            }
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int arr[] = {2,3,1,5,4,9};
+        int n = arr.length;
+        traversal(arr,n);
+        longest(arr,n);
+
+    }
+}
 
 
 
