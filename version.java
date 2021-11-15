@@ -1,5 +1,5 @@
 /*
-//LoveBabbar Question 1
+//LoveBabbar Question 6 Reverse The Array
 package my.solution;
 public class version
 {
@@ -40,7 +40,7 @@ public class version
         traversal(arr,size);
     }
 }
-
+//Question 7  minimum and maximum elements
 package my.solution;
 public class version
 {
@@ -107,7 +107,7 @@ public class version
     }
 }
 
-
+//Question 8
 package my.solution;
 public class version
 
@@ -152,6 +152,8 @@ public class version1
 
     }
 }
+
+
 package my.solution;
 public class version
 {
@@ -178,7 +180,7 @@ public class version
 
     }
 }
-
+//Question 9
 package my.solution;
 public class version
 {
@@ -241,7 +243,7 @@ public class version
 
     }
 }
-
+//Question 10
 package my.solution;
 public class version
 {
@@ -309,6 +311,7 @@ public class version
 
     }
 }
+//Question 11
 package my.solution;
 public class version
 {
@@ -380,6 +383,8 @@ public class version
 
     }
 }
+
+//Question 13
 package my.solution;
 public class version  {
     static void traversal(int arr[],int n)
@@ -422,7 +427,8 @@ public class version  {
 }
 
 
-//minimize the height
+
+//Question 14 minimize the height
 package my.solution;
 
 import java.lang.reflect.Array;
@@ -490,6 +496,8 @@ public class version
 
     }
 }
+
+
 package my.solution;
 public class version  {
     static void traversal(int arr[],int n)
@@ -564,7 +572,7 @@ public class version  {
     }
 }
 
-//Question No. 17  [Merge 2 sorted array without using extra space]
+//Question 17  [Merge 2 sorted array without using extra space]
  package my.solution;
 
 import java.util.Arrays;
@@ -774,6 +782,8 @@ public class version
         sort_Array(arr,brr,crr,n,m,o);
     }
 }
+
+
 //Question No. 22 Stock
 package my.solution;
 public class version
@@ -834,7 +844,7 @@ public class version
     }
 }
 
-//Question No. 22 factorial
+//Question No. 27 factorial
 package my.solution;
 public class version {
     static int factorial(int n)
@@ -901,8 +911,8 @@ public class version
         traversal(arr,n);
         subArray_mult(arr,n);
     }
-}*/
-//Question No. 28  Longest Consecutive SubArray
+}
+//Question No. 29  Longest Consecutive SubArray
 package my.solution;
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -940,6 +950,95 @@ public class version
 
     }
 }
+//Question 13  Cyclic rotate the array by one
+package my.solution;
+public class version
+{
+    static void traversal(int arr[],int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]);
+            System.out.print(" ");
+        }
+        System.out.println();
+    }
+
+    static void rotate(int arr[],int n)
+    {
+        int x = arr[n-1];
+        System.out.println(x+" is store in the x");
+        for(int i=n-1;i>0;i--)          //1,2,3,4,5
+        {
+            arr[i] = arr[i-1];
+        }
+        arr[0] = x;
+        traversal(arr,n);
+
+    }
+    public static void main(String [] args)
+    {
+        int arr[] = {1,2,3,4,5};
+        int n=arr.length;
+        traversal(arr,n);
+        rotate(arr,n);
+    }
+}
+package my.solution;
+public class version
+{
+    static void traversal(int arr[],int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]);
+            System.out.print(" ");
+        }
+        System.out.println();
+    }
+    static void twiceStock(int arr[],int n)
+    {
+        int res = 0;
+        if(arr[1]>arr[0])
+        {
+            res = arr[1] - arr[0];
+            System.out.println("Buy The Stock's At Rs"+arr[0]+" And Sold At Rs"+arr[1] +"\nProfit Will Be Rs"+res);
+        }
+
+        int min = arr[2];
+        for(int i=2;i<n;i++)
+        {
+            if(arr[i] < min)
+            {
+                min = arr[i];
+            }
+        }
+        System.out.println(min);
+
+        int max= 0;
+        for(int i=2;i<n;i++)
+        {
+            if(arr[i] > max)
+            {
+                max = arr[i];
+            }
+        }
+        System.out.println(max);
+        
+        int ress = max-min;
+        int sum = res+ress;
+        System.out.println(sum);
+
+    }
+    public static void main(String [] args)
+    {
+        int arr[] = {1,20,3,40,50};
+        int n=arr.length;
+        traversal(arr,n);
+        twiceStock(arr,n);
+    }
+}*/
+
 
 
 
