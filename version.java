@@ -106,12 +106,10 @@ public class version
         check_max(arr,n);
     }
 }
-
+*/
 //Question 8
 package my.solution;
 public class version
-
-public class version1
 {
     static void traversal(int []arr,int n)
     {
@@ -152,7 +150,7 @@ public class version1
 
     }
 }
-
+/*
 
 package my.solution;
 public class version
